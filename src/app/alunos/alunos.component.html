@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s6">
+    <p>Lista de Alunos: Loiane Design</p>
+    <div class="collection">
+      <a class="collection-item"
+        *ngFor="let aluno of alunos"
+        [routerLink]="[aluno.id]"
+      > {{ aluno.nome }}</a>
+      </div>
+    </div>
+    <div class="col s6">
+    <router-outlet></router-outlet>
+    </div>
+  </div>
+<!-- <div>
+<p>Lista de alunos: Xande Design </p>
+<ul class="collapsible">
+  <li *ngFor="let aluno of alunos"
+  [routerLink]="[aluno.id]">
+    <div class="collapsible-header">
+     {{ aluno.nome}} </div>
+    <div class="collapsible-body" >
+      <router-outlet></router-outlet>
+    </div>
+  </li>
+</ul>
+</div> -->
+
