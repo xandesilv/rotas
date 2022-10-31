@@ -32,7 +32,9 @@
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input id="nome" [(ngModel)]="aluno.nome" class="validate">
+        <input id="nome" [(ngModel)]="aluno.nome" class="validate"
+        (input)="onInput()"
+        >
         <label placeholder="Nome" for="first_name" class="active">  </label>
       </div>
     </div>

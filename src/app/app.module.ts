@@ -1,3 +1,8 @@
+import { AlunosGuard } from './guards/alunos.guard';
+import { CursosGuard } from './guards/cursos.guard';
+import { AuthGuard } from './guards/auth.guard';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './login/auth.service';
 //import { CursosService } from './cursos/cursos.service';
 //import { CursosComponent } from './cursos/cursos.component';
 //import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
@@ -11,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 
 
@@ -19,6 +25,7 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
+    PaginaNaoEncontradaComponent,
 
     //CursosComponent,
     // CursoDetalheComponent,
@@ -29,9 +36,14 @@ import { LoginComponent } from './login/login.component';
     //CursosModule,
     //AlunosModule,
     AppRoutingModule,
-
+    FormsModule
   ],
-  providers: [/*CursosService*/],
+  providers: [/*CursosService*/
+AuthService,
+AuthGuard,
+CursosGuard,
+AlunosGuard
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

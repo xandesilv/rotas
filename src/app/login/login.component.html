@@ -1,18 +1,29 @@
+<h5>Login</h5>
 
-
-<div class="card">
-  <div class="card-image waves-effect waves-block waves-light">
-  </div>
-  <img class="activator" src="http://lorempixel.com.br/200/200/?1">
-  <div  class="progress">
-    <div class="determinate"></div>
-  </div>
-  <div class="card-content">
-    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-    <p><a href="#">This is a link</a></p>
-  </div>
-  <div class="card-reveal">
-    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-    <p>Here is some more information about this product that is only revealed once clicked on.</p>
+<div class="row">
+  <div class="input-field col s4">
+    <input
+    [(ngModel)]="usuario.nome"
+     id="usuario"
+     type="text"
+     class="validate">
+    <label class="active" for="usuario">Usuário</label>
   </div>
 </div>
+<div class="row">
+  <div class="input-field col s4">
+    <input
+    [(ngModel)]="usuario.senha"
+    id="senha"
+    type="password"
+    class="validate">
+    <label class="active" for="senha">Senha</label>
+  </div>
+</div>
+<button
+class="btn waves-effect waves-light"
+type="submit" name="action"
+(click)="fazerLogin()"
+>Login
+  <i class="material-icons right">send</i>
+</button>

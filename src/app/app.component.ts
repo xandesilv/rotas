@@ -1,3 +1,4 @@
+import { AuthService } from './login/auth.service';
 import { Component } from '@angular/core';
 import * as M from 'materialize-css';
 
@@ -12,5 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 export class AppComponent {
   title = 'rotas';
+  mostrarMenu = false;
 
+  constructor(private authService: AuthService){
+
+  }
+
+  ngOnInit(){
+    this.authService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar);
+  }
 }
